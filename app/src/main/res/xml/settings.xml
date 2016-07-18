@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="常规设置">
+        <com.lb.material_preferences_library.custom_preferences.ListPreference
+            android:defaultValue="5424245201314"
+            android:key="refresh"
+            android:summary="%s"
+            android:title="自动刷新间隔"
+            app:dialogTitle="设置自动刷新间隔"
+            app:entries="@array/settings"
+            app:entryValues="@array/settings_value"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="关于">
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="shanche"
+            android:title="汕头公交第三方客户端"
+            android:summary="1.0"/>
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="email"
+            android:title="反馈及建议"
+            android:summary="bobosusu4629@gmail.com">
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="coffee"
+            android:title="请作者喝一杯咖啡">
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="github"
+            android:title="Github 源码地址"
+            android:summary="https://github.com/bobo4629/Shanche">
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="GPL"
+            android:title="开源代码许可证"
+            android:summary="GPL v3">
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+
+    </PreferenceCategory>
+</PreferenceScreen>

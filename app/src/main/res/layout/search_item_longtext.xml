@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <com.thinkcool.circletextimageview.CircleTextImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:citv_text_text="查询中"
+            app:citv_text_size="12sp"
+            app:citv_text_color="@android:color/white"
+            app:citv_fill_color="#9E9E9E"
+            android:id="@+id/view_LineName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Small Text1"
+            android:id="@+id/textView_Site"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/view_LineName"
+            android:paddingLeft="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Small Text2"
+            android:id="@+id/textView_Time"
+            android:paddingLeft="16dp"
+            android:layout_alignBottom="@+id/view_LineName"
+            android:layout_toEndOf="@+id/view_LineName"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="票价:2元"
+            android:id="@+id/textView_Fare"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+</LinearLayout>

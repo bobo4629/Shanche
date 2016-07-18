@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.thinkcool.circletextimageview.CircleTextImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:citv_text_text="查询中"
+        app:citv_text_size="12sp"
+        app:citv_text_color="@android:color/white"
+        app:citv_fill_color="#50555D"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/view_busLine" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="查询中..."
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:id="@+id/textView_Collection_BusSite"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/view_busLine"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="查询中..."
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:id="@+id/textView_Collection_IsBus"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/view_busLine"
+        android:paddingBottom="8dp"
+        android:paddingLeft="16dp" />
+</RelativeLayout>
+
+
+</LinearLayout>
