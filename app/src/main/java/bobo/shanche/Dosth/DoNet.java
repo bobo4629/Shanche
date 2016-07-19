@@ -46,7 +46,10 @@ public class DoNet {
             connection.setReadTimeout(10000);
             connection.setDoInput(true);
             connection.setDoOutput(true);
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Linux; Android 6.0; Google Nexus 6P AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 Html5Plus/1.0");
+            connection.setRequestProperty("Accept","application/json");
+            connection.setRequestProperty("Connection", "Keep-Alive");
+            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
             connection.setRequestProperty("Content-Length", String.valueOf(data.length));
             os = connection.getOutputStream();
             os.write(data);

@@ -4,7 +4,7 @@
 
     <PreferenceCategory android:title="常规设置">
         <com.lb.material_preferences_library.custom_preferences.ListPreference
-            android:defaultValue="5424245201314"
+            android:defaultValue="5201314"
             android:key="refresh"
             android:summary="%s"
             android:title="自动刷新间隔"
@@ -16,7 +16,7 @@
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="shanche"
             android:title="汕头公交第三方客户端"
-            android:summary="1.0"/>
+            android:summary="2.0"/>
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="email"
             android:title="反馈及建议"

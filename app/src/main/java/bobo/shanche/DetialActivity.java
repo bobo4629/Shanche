@@ -257,8 +257,8 @@ public class DetialActivity extends AppCompatActivity {
                                     mRecyclerView.setAdapter(mAdapter);
                                 }else {
                                     mAdapter.setList(busSites);
-                                    for(int i=0;i<mAdapter.getItemCount();i++){
-                                        mAdapter.notifyItemChanged(i);
+                                        for(int i=0;i<mAdapter.getItemCount();i++){
+                                            mAdapter.notifyItemChanged(i);
                                     }
                                 }
                                 collectionCheck();
@@ -270,7 +270,7 @@ public class DetialActivity extends AppCompatActivity {
                         e.printStackTrace();
                     }
                     handler.removeCallbacks(runnable);
-                    String time =PreferenceManager.getDefaultSharedPreferences(DetialActivity.this).getString("refresh","5424245201314");
+                    String time =PreferenceManager.getDefaultSharedPreferences(DetialActivity.this).getString("refresh","5201314");
                     delayTime= Long.parseLong(time);
                     handler.postDelayed(runnable,delayTime);
                 }

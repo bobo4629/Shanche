@@ -2,6 +2,8 @@ package bobo.shanche.Dosth;
 
 import java.util.List;
 
+import bobo.shanche.jsonDo.BusSite;
+
 /**
  * Created by bobo1 on 2016/7/13.
  */
@@ -12,6 +14,16 @@ public class MainBus {
     private String endSite;
     private int upDown;
     private List<String> isbusList;
+
+    public List<BusSite> getBusSiteList() {
+        return busSiteList;
+    }
+
+    public void setBusSiteList(List<BusSite> busSiteList) {
+        this.busSiteList = busSiteList;
+    }
+
+    private List<BusSite> busSiteList;
 
     public List<String> getIsbusList() {
         return isbusList;

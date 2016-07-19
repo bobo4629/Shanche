@@ -2,6 +2,8 @@ package bobo.shanche.myAdapter;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.location.Location;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +24,18 @@ import bobo.shanche.jsonDo.BusSite;
 public class MainAdapter extends BaseAdapter {
     private List<MainBus> list;
     private LayoutInflater layoutInflater;
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    private Location location;
+    private double distance =6378137;
+    private String nestestStop;
+
+
+
+    private String carString;
 
     public MainAdapter(Context context, List<MainBus> mainBusList) {
         this.list = mainBusList;
@@ -90,21 +104,53 @@ public class MainAdapter extends BaseAdapter {
                 color=R.color.i;
                 break;
         }
-        circleTextImageView.setText(list.get(position).getLineName());
+        MainBus mainBus=list.get(position);
+        circleTextImageView.setText(mainBus.getLineName());
         circleTextImageView.setFillColorResource(color);
 
-        textView_BusSite.setText(list.get(position).getStartSite()+" - "+list.get(position).getEndSite());
-        if(list.get(position).getIsbusList()!=null){
-            if(list.get(position).getIsbusList().isEmpty()){
-                textView_IsBus.setText("没有车辆正在运营");
+        textView_BusSite.setText(mainBus.getStartSite()+" - "+mainBus.getEndSite());
+        if(mainBus.getIsbusList()!=null){
+            if(mainBus.getIsbusList().isEmpty()){
+                carString="没有车辆正在运营";
             }else {
-                textView_IsBus.setText("有车：");
-                for(String string:list.get(position).getIsbusList()){
-                    textView_IsBus.append(string+";");
+                if(location==null){
+                    carString="有车:";
+                    for(String string:mainBus.getIsbusList()){
+                        carString+=string+";";
+                    }
+                }else {
+                     for(BusSite busSite:mainBus.getBusSiteList()){
+                        double distance_now =Distance(busSite.getLongitude(),busSite.getLatitude(),location.getLongitude(),location.getLatitude());
+                        if(distance_now<distance){
+                            distance=distance_now;
+                            nestestStop=busSite.getSiteName();
+                        }
+                        carString ="最近的车在:"+nestestStop;
+                    }
                 }
+
             }
         }
+        textView_IsBus.setText(carString);
+
 
         return convertView;
+    }
+    public static double Distance(double long1, double lat1, double long2, double lat2) {
+        double a, b, R;
+        R = 6378137; // 地球半径
+        lat1 = lat1 * Math.PI / 180.0;
+        lat2 = lat2 * Math.PI / 180.0;
+        a = lat1 - lat2;
+        b = (long1 - long2) * Math.PI / 180.0;
+        double d;
+        double sa2, sb2;
+        sa2 = Math.sin(a / 2.0);
+        sb2 = Math.sin(b / 2.0);
+        d = 2
+                * R
+                * Math.asin(Math.sqrt(sa2 * sa2 + Math.cos(lat1)
+                * Math.cos(lat2) * sb2 * sb2));
+        return d;
     }
 }
