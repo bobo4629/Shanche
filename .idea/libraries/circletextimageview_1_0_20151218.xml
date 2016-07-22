@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="circletextimageview-1.0.20151218">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.thinkcool/circletextimageview/1.0.20151218/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.thinkcool/circletextimageview/1.0.20151218/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.thinkcool/circletextimageview/1.0.20151218/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

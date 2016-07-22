@@ -224,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                                         startActivity(intent);
                                     }
                                 });
+
                             }
                         });
                     }
@@ -304,7 +305,6 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 });
                                 initLocation();
-
                             }
                         });
                     }
@@ -330,8 +330,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //定位
-                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                List<String> locationList = locationManager.getProviders(true);
                 if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
@@ -347,8 +345,12 @@ public class MainActivity extends AppCompatActivity {
                             Snackbar.make(mainView, "无定位权限，无法查看最近车辆。", Snackbar.LENGTH_LONG).show();
                         }
                     });
+                    return;
 
                 }
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+                List<String> locationList = locationManager.getProviders(true);
+
                 if (locationList.contains(LocationManager.GPS_PROVIDER)) {
                     provider = LocationManager.GPS_PROVIDER;
                 } else if (locationList.contains(LocationManager.NETWORK_PROVIDER)) {
@@ -361,6 +363,7 @@ public class MainActivity extends AppCompatActivity {
                             Snackbar.make(mainView, "无可用定位服务，请检查是否打开定位服务。", Snackbar.LENGTH_LONG).show();
                         }
                     });
+                    return;
                 }
                 locationListener = new LocationListener() {
                     @Override
@@ -389,7 +392,9 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         }else {
+                            if(provider!=null){
                             locationManager.requestLocationUpdates(provider, 3000, 1, locationListener);
+                            }
                         }
                     }
                 });
@@ -411,17 +416,20 @@ public class MainActivity extends AppCompatActivity {
         }
         try{
             locationManager.removeUpdates(locationListener);
+            location = locationManager.getLastKnownLocation(provider);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    recordAdapter.setLocation(location);
+                    recordAdapter.notifyDataSetChanged();
+                    collectionAdapter.setLocation(location);
+                    collectionAdapter.notifyDataSetChanged();
+
+                }
+            });
         }catch (Exception e){
         }
-        location = locationManager.getLastKnownLocation(provider);
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                recordAdapter.setLocation(location);
-                recordAdapter.notifyDataSetChanged();
 
-            }
-        });
     }
 
     @Override

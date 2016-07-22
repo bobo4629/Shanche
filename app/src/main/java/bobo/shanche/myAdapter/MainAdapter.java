@@ -30,8 +30,7 @@ public class MainAdapter extends BaseAdapter {
     }
 
     private Location location;
-    private double distance =6378137;
-    private String nestestStop;
+    private double distance_Earth =6378137;
 
 
 
@@ -119,10 +118,12 @@ public class MainAdapter extends BaseAdapter {
                         carString+=string+";";
                     }
                 }else {
+                    String nestestStop=null;
+                    double distance_set=distance_Earth;
                      for(BusSite busSite:mainBus.getBusSiteList()){
                         double distance_now =Distance(busSite.getLongitude(),busSite.getLatitude(),location.getLongitude(),location.getLatitude());
-                        if(distance_now<distance){
-                            distance=distance_now;
+                        if(distance_now<distance_set){
+                            distance_set=distance_now;
                             nestestStop=busSite.getSiteName();
                         }
                         carString ="最近的车在:"+nestestStop;
