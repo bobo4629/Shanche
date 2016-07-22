@@ -421,9 +421,9 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     recordAdapter.setLocation(location);
-                    recordAdapter.notifyDataSetChanged();
                     collectionAdapter.setLocation(location);
                     collectionAdapter.notifyDataSetChanged();
+                    recordAdapter.notifyDataSetChanged();
 
                 }
             });
