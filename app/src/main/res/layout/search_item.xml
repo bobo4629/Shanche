@@ -39,21 +39,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Small Text2"
-            android:id="@+id/textView_Time"
-            android:paddingLeft="16dp"
-            android:layout_alignBottom="@+id/view_LineName"
-            android:layout_toEndOf="@+id/view_LineName"
-            android:paddingBottom="8dp" />
+            android:text="票价:2元"
+            android:id="@+id/textView_Fare"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="票价:2元"
-            android:id="@+id/textView_Fare"
+            android:text="Small Text2"
+            android:id="@+id/textView_Time"
+            android:paddingLeft="16dp"
+            android:paddingBottom="8dp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_toEndOf="@+id/view_LineName" />
 
     </RelativeLayout>
 </LinearLayout>

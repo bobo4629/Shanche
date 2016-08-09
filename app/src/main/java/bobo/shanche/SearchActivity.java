@@ -96,7 +96,7 @@ public class SearchActivity extends AppCompatActivity {
                                     });
                                 }else {
                                     Map<String,String> content = new HashMap<>();
-                                    content.put("LineName",busLineName);
+                                    content.put("lineName",busLineName);
                                     postBack = doPost.post("http://183.232.33.171/IntelligentBusService.asmx/GetLines", content);
                                     doJson(postBack);
                                     runOnUiThread(new Runnable() {

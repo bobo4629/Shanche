@@ -4,19 +4,28 @@
 
     <PreferenceCategory android:title="常规设置">
         <com.lb.material_preferences_library.custom_preferences.ListPreference
-            android:defaultValue="5201314"
+            android:defaultValue= "10000"
             android:key="refresh"
             android:summary="%s"
             android:title="自动刷新间隔"
             app:dialogTitle="设置自动刷新间隔"
             app:entries="@array/settings"
             app:entryValues="@array/settings_value"/>
+        <com.lb.material_preferences_library.custom_preferences.ListPreference
+            android:defaultValue="0"
+            android:key="remind"
+            android:summary="%s"
+            android:title="到站提醒方式"
+            app:dialogTitle="设置提醒方式"
+            app:entries="@array/remindWay"
+            app:entryValues="@array/remindWay_value"/>
     </PreferenceCategory>
+
     <PreferenceCategory android:title="关于">
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="shanche"
             android:title="汕头公交第三方客户端"
-            android:summary="2.0"/>
+            android:summary="3.0"/>
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="email"
             android:title="反馈及建议"

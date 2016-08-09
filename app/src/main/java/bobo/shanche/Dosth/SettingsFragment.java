@@ -58,6 +58,8 @@ public class SettingsFragment extends PreferenceFragment {
                 break;
             case "shanche":
                 break;
+            default:
+                break;
 
         }
 

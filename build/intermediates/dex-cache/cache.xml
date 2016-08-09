@@ -1,3 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_e432c0e253922c93b67cbbfaa7bc59c4632e98a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\gson-2.7_9297a8dc2bb54f09affe6aeda09f5f4c23a7db9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\libs\TalkingdataAnalytics.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="55270e73dfefe33430d2f5447b2f745bb4e8cb11">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\TalkingdataAnalytics_1c08a06661adf8231a91171ed0e146b63ca1e1fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_6d851d9a3cbbe5d1dac573180ea50da442a0ff00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.AndroidDeveloperLB\MaterialPreferenceLibrary\9\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5cdc0793b8550df9d23af00702838d9993fb108d">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.github.AndroidDeveloperLB-MaterialPreferenceLibrary-9_2629fc7e2ee8c4895f1765e092eb75847a20d1d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.4.0_e432c0e253922c93b67cbbfaa7bc59c4632e98a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.thinkcool\circletextimageview\1.0.20151218\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="fc3a81969d8cc9cc914937059310f54f9c416315">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.github.thinkcool-circletextimageview-1.0.20151218_ded891be82384acc9905ef6040b7fe340d02d7d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.AndroidDeveloperLB\MaterialPreferenceLibrary\9\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="5cdc0793b8550df9d23af00702838d9993fb108d">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.github.AndroidDeveloperLB-MaterialPreferenceLibrary-9_2629fc7e2ee8c4895f1765e092eb75847a20d1d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-23.4.0_c3c644f60ba998918c15a49ff50ad15368c35997.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\libs\TalkingdataAnalytics.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="55270e73dfefe33430d2f5447b2f745bb4e8cb11">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\TalkingdataAnalytics_1c08a06661adf8231a91171ed0e146b63ca1e1fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\support-annotations-23.4.0_6d851d9a3cbbe5d1dac573180ea50da442a0ff00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-recyclerview-v7-23.4.0_1ec98328c02ad67a4fa72d269370364292f89cf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_5cb8491b9bcd3391229288d27aebd3701303f8d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_c3c644f60ba998918c15a49ff50ad15368c35997.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_1ec98328c02ad67a4fa72d269370364292f89cf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.4.0_1ec98328c02ad67a4fa72d269370364292f89cf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_e432c0e253922c93b67cbbfaa7bc59c4632e98a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\support-annotations-23.4.0_6d851d9a3cbbe5d1dac573180ea50da442a0ff00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\libs\TalkingdataAnalytics.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="55270e73dfefe33430d2f5447b2f745bb4e8cb11">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\TalkingdataAnalytics_1c08a06661adf8231a91171ed0e146b63ca1e1fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-design-23.4.0_ff715a851a0a9fd52652807a8a214978e2980fd1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_c3c644f60ba998918c15a49ff50ad15368c35997.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_5cb8491b9bcd3391229288d27aebd3701303f8d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_20d562db509abbeca9a95030febf0190cbc086f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\internal_impl-23.4.0_20d562db509abbeca9a95030febf0190cbc086f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_fee86ec6e0480921dc36910e25b5acf2b912bf38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.thinkcool\circletextimageview\1.0.20151218\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="fc3a81969d8cc9cc914937059310f54f9c416315">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.github.thinkcool-circletextimageview-1.0.20151218_ded891be82384acc9905ef6040b7fe340d02d7d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.4.0_5cb8491b9bcd3391229288d27aebd3701303f8d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\internal_impl-23.4.0_20d562db509abbeca9a95030febf0190cbc086f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.AndroidDeveloperLB\MaterialPreferenceLibrary\9\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="5cdc0793b8550df9d23af00702838d9993fb108d">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.github.AndroidDeveloperLB-MaterialPreferenceLibrary-9_2629fc7e2ee8c4895f1765e092eb75847a20d1d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.thinkcool\circletextimageview\1.0.20151218\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="fc3a81969d8cc9cc914937059310f54f9c416315">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.github.thinkcool-circletextimageview-1.0.20151218_ded891be82384acc9905ef6040b7fe340d02d7d6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\gson-2.7_9297a8dc2bb54f09affe6aeda09f5f4c23a7db9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.4.0_ff715a851a0a9fd52652807a8a214978e2980fd1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="24.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.4.0_fee86ec6e0480921dc36910e25b5acf2b912bf38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\gson-2.7_9297a8dc2bb54f09affe6aeda09f5f4c23a7db9d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-23.4.0_fee86ec6e0480921dc36910e25b5acf2b912bf38.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.4.0_ff715a851a0a9fd52652807a8a214978e2980fd1.jar" />
+    </item>
+
+</items>

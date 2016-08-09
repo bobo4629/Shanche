@@ -171,8 +171,6 @@ public class DetialActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private void collectionChange(Station station){
@@ -224,7 +222,7 @@ public class DetialActivity extends AppCompatActivity {
     }
 
 
-    private void upDownChange(int upOrDown,int neworrefresh){//1 new 2 refresh
+    private void upDownChange(final int upOrDown, int neworrefresh){//1 new 2 refresh
         if(!isNetworkConnected()){
             coordinatorLayout=(CoordinatorLayout)findViewById(R.id.CoordinatorLayout);
             Snackbar.make(coordinatorLayout,"暂无网络连接，请稍后再试",Snackbar.LENGTH_LONG).show();
@@ -255,6 +253,17 @@ public class DetialActivity extends AppCompatActivity {
                                     mRecyclerView.setLayoutManager(new LinearLayoutManager(DetialActivity.this));
                                     mAdapter = new HomeAdapter(busSites);
                                     mRecyclerView.setAdapter(mAdapter);
+                                    mAdapter.setOnItemClickListener(new HomeAdapter.OnItemClickListener() {
+                                        @Override
+                                        public void onClick(View view, int position) {
+                                            Intent intent = new Intent(DetialActivity.this,RemindActivity.class);
+                                            intent.putExtra("id",busSites.get(position).getLineId());
+                                            intent.putExtra("upDown",upOrDown);
+                                            intent.putExtra("siteNow",busSites.get(position).getSiteName());
+                                            intent.putExtra("position",position);
+                                            startActivity(intent);
+                                        }
+                                    });
                                 }else {
                                     mAdapter.setList(busSites);
                                         for(int i=0;i<mAdapter.getItemCount();i++){
@@ -262,15 +271,13 @@ public class DetialActivity extends AppCompatActivity {
                                     }
                                 }
                                 collectionCheck();
-
-
                             }
                         });
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                     handler.removeCallbacks(runnable);
-                    String time =PreferenceManager.getDefaultSharedPreferences(DetialActivity.this).getString("refresh","5201314");
+                    String time =PreferenceManager.getDefaultSharedPreferences(DetialActivity.this).getString("refresh","10000");
                     delayTime= Long.parseLong(time);
                     handler.postDelayed(runnable,delayTime);
                 }

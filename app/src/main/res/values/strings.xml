@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">汕头公交</string>
+    <string name="app_name">汕车</string>
     <string name="action_settings">设置</string>
     <string name="title_activity_settings">Settings</string>
     <string-array name="settings">
@@ -9,7 +9,8 @@
         <item>30秒</item>
         <item>关闭</item>
     </string-array>
-    <string-array name="settings_value">
+
+    <string-array  name="settings_value">
         <item>5000</item>
         <item>10000</item>
         <item>20000</item>
@@ -17,6 +18,16 @@
         <item>5201314</item>
     </string-array>
 
+    <string-array name="remindWay">
+        <item>震动</item>
+        <item>声音</item>
+        <item>Both</item>
+    </string-array>
+    <string-array name="remindWay_value">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
 
     <!-- Strings related to Settings -->
 
