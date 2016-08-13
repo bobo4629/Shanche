@@ -72,39 +72,7 @@ public class SettingsFragment extends PreferenceFragment {
                 PgyFeedback.getInstance().showDialog(getActivity());
                 break;
             case "shanche":
-                PgyUpdateManager.register(getActivity(),
-                        new UpdateManagerListener() {
-
-                            @Override
-                            public void onUpdateAvailable(final String result) {
-
-                                // 将新版本信息封装到AppBean中
-                                final AppBean appBean = getAppBeanFromString(result);
-                                new AlertDialog.Builder(getActivity().getApplicationContext())
-                                        .setTitle("更新")
-                                        .setMessage("")
-                                        .setCancelable(true)
-                                        .setNegativeButton(
-                                                "确定",
-                                                new DialogInterface.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(
-                                                            DialogInterface dialog,
-                                                            int which) {
-                                                        startDownloadTask(
-                                                                getActivity(),
-                                                                appBean.getDownloadURL());
-                                                    }
-                                                }).show();
-
-
-                            }
-
-                            @Override
-                            public void onNoUpdateAvailable() {
-                                Toast.makeText(getActivity(), "当前为最新版本。", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                PgyUpdateManager.register(getActivity());
                 break;
             case "note":
                 break;

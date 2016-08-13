@@ -8,8 +8,8 @@ android {
         applicationId "bobo.shanche"
         minSdkVersion 17
         targetSdkVersion 23
-        versionCode 3
-        versionName "3.1"
+        versionCode 4
+        versionName "4.0"
     }
     buildTypes {
         release {

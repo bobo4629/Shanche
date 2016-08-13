@@ -25,7 +25,7 @@
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="shanche"
             android:title="汕车 - 汕头公交第三方客户端"
-            android:summary="3.1 - 检查更新"/>
+            android:summary="4.0 - 检查更新"/>
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="email"
             android:title="反馈及建议">
