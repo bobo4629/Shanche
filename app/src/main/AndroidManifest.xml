@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon"
@@ -38,6 +39,13 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".RemindActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+
+
+        <meta-data
+            android:name="PGYER_APPID"
+            android:value="790c6cac2cf2ed9d678cd75b18fd5d65" >
+        </meta-data>
     </application>
 
 </manifest>

@@ -38,6 +38,7 @@ import bobo.shanche.jsonDo.BusSite;
 import bobo.shanche.jsonDo.Station;
 import bobo.shanche.myAdapter.HomeAdapter;
 
+import com.pgyersdk.crash.PgyCrashManager;
 /**
  * Created by bobo1 on 2016/7/8.
  */
@@ -94,10 +95,12 @@ public class DetialActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+
         DbHelper db = new DbHelper(this);
         db.delete(DbTable_R,lineName);
         db.add(DbTable_R,station);
         db.close();
+        PgyCrashManager.unregister();
         try {
             handler.removeCallbacks(runnable);
         }catch (Exception e){
@@ -110,6 +113,9 @@ public class DetialActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.acticity_detial);
+
+        PgyCrashManager.register(this);
+
         Intent intent =getIntent();
         lineName = intent.getStringExtra("lineName");
         id = intent.getStringExtra("id");
@@ -280,6 +286,7 @@ public class DetialActivity extends AppCompatActivity {
                     String time =PreferenceManager.getDefaultSharedPreferences(DetialActivity.this).getString("refresh","10000");
                     delayTime= Long.parseLong(time);
                     handler.postDelayed(runnable,delayTime);
+
                 }
 
 

@@ -24,18 +24,16 @@
     <PreferenceCategory android:title="关于">
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="shanche"
-            android:title="汕头公交第三方客户端"
-            android:summary="3.0"/>
+            android:title="汕车 - 汕头公交第三方客户端"
+            android:summary="3.1 - 检查更新"/>
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="email"
-            android:title="反馈及建议"
-            android:summary="bobosusu4629@gmail.com">
+            android:title="反馈及建议">
         </com.lb.material_preferences_library.custom_preferences.Preference>
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="coffee"
             android:title="请作者喝一杯咖啡">
         </com.lb.material_preferences_library.custom_preferences.Preference>
-
         <com.lb.material_preferences_library.custom_preferences.Preference
             android:key="github"
             android:title="Github 源码地址"
@@ -45,6 +43,11 @@
             android:key="GPL"
             android:title="开源代码许可证"
             android:summary="GPL v3">
+        </com.lb.material_preferences_library.custom_preferences.Preference>
+        <com.lb.material_preferences_library.custom_preferences.Preference
+            android:key="note"
+            android:title="应用权限说明"
+            android:summary="读写及录音权限为更新、统计SDK需要">
         </com.lb.material_preferences_library.custom_preferences.Preference>
 
     </PreferenceCategory>

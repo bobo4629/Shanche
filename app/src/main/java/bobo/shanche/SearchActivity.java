@@ -29,6 +29,7 @@ import bobo.shanche.Dosth.DoNet;
 import bobo.shanche.jsonDo.BusLine;
 import bobo.shanche.myAdapter.BusLineAdapter;
 
+import com.pgyersdk.crash.PgyCrashManager;
 /**
  * Created by bobo1 on 2016/7/9.
  */
@@ -51,6 +52,9 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        PgyCrashManager.register(this);
+
         final EditText editText = (EditText)findViewById(R.id.editText_search);
         final ListView listView = (ListView)findViewById(R.id.listView);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_search);
@@ -129,6 +133,12 @@ public class SearchActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        PgyCrashManager.unregister();
+        super.onDestroy();
     }
 
     private void doJson(String json) {

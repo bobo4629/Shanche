@@ -4,10 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.database.Cursor;
 
-import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -35,7 +33,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.tendcloud.tenddata.TCAgent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,6 +47,8 @@ import bobo.shanche.dbDo.DbHelper;
 import bobo.shanche.jsonDo.BusSite;
 import bobo.shanche.jsonDo.Station;
 import bobo.shanche.myAdapter.MainAdapter;
+
+import com.pgyersdk.crash.PgyCrashManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private LocationManager locationManager;
     private LocationListener locationListener;
     private String provider;
+    private int times=1;
 
     private static Boolean isExit = false;
     @Override
@@ -78,9 +78,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TCAgent.LOG_ON = true;
-        TCAgent.init(this, "AE41A509E5E28A3312D6794C567F16E0", "same");
-        TCAgent.setReportUncaughtExceptions(true);
+
+        PgyCrashManager.register(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -100,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     @Override
@@ -115,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+        PgyCrashManager.unregister();
         try{
             locationManager.removeUpdates(locationListener);
         }catch (Exception e){
@@ -126,8 +125,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
-        initCollection();
-        initRecord();
+        initCollection(times);
+        initRecord(times);
         super.onResume();
     }
 
@@ -154,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void initCollection() {
+    public void initCollection(final int newOrRefresh) {
         if (!isNetworkConnected()) {
             Snackbar.make(mainView, "暂无网络连接，请稍后再试", Snackbar.LENGTH_LONG).show();
         } else {
@@ -206,34 +205,39 @@ public class MainActivity extends AppCompatActivity {
                             collectionList.add(mainBus);
                         } while (cursor.moveToNext());
 
-
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 final ListView listView_Collection = (ListView) findViewById(R.id.listView_Collection);
-                                collectionAdapter = new MainAdapter(MainActivity.this, collectionList);
-                                listView_Collection.setAdapter(collectionAdapter);
-                                listView_Collection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        MainBus mainBus = (MainBus) listView_Collection.getItemAtPosition(position);
-                                        Intent intent = new Intent(MainActivity.this, DetialActivity.class);
-                                        intent.putExtra("upDown", mainBus.getUpDown());
-                                        intent.putExtra("id", mainBus.getBusID());
-                                        intent.putExtra("lineName", mainBus.getLineName());
-                                        startActivity(intent);
-                                    }
-                                });
+                                if(newOrRefresh==1){
+                                    collectionAdapter = new MainAdapter(MainActivity.this, collectionList);
+                                    listView_Collection.setAdapter(collectionAdapter);
+                                    listView_Collection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                            MainBus mainBus = (MainBus) listView_Collection.getItemAtPosition(position);
+                                            Intent intent = new Intent(MainActivity.this, DetialActivity.class);
+                                            intent.putExtra("upDown", mainBus.getUpDown());
+                                            intent.putExtra("id", mainBus.getBusID());
+                                            intent.putExtra("lineName", mainBus.getLineName());
+                                            startActivity(intent);
+                                        }
+                                    });
+                                }else {
+
+                                }
+
 
                             }
                         });
                     }
+                    times++;
                 }
             }).start();
         }
     }
 
-    public void initRecord() {
+    public void initRecord(final int newOrRefresh) {//1new 2refresh
         if (!isNetworkConnected()) {
             Snackbar.make(mainView, "暂无网络连接，请稍后再试", Snackbar.LENGTH_LONG).show();
         } else {
@@ -291,19 +295,26 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 final ListView listView_Record = (ListView) findViewById(R.id.listView_Record);
-                                recordAdapter = new MainAdapter(MainActivity.this, recordList);
-                                listView_Record.setAdapter(recordAdapter);
-                                listView_Record.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                    @Override
-                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        MainBus mainBus = (MainBus) listView_Record.getItemAtPosition(position);
-                                        Intent intent = new Intent(MainActivity.this, DetialActivity.class);
-                                        intent.putExtra("id", mainBus.getBusID());
-                                        intent.putExtra("lineName", mainBus.getLineName());
-                                        intent.putExtra("upDown", mainBus.getUpDown());
-                                        startActivity(intent);
-                                    }
-                                });
+                                if(newOrRefresh==1){
+
+                                    recordAdapter = new MainAdapter(MainActivity.this, recordList);
+                                    listView_Record.setAdapter(recordAdapter);
+                                    listView_Record.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                        @Override
+                                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                            MainBus mainBus = (MainBus) listView_Record.getItemAtPosition(position);
+                                            Intent intent = new Intent(MainActivity.this, DetialActivity.class);
+                                            intent.putExtra("id", mainBus.getBusID());
+                                            intent.putExtra("lineName", mainBus.getLineName());
+                                            intent.putExtra("upDown", mainBus.getUpDown());
+                                            startActivity(intent);
+                                        }
+                                    });
+
+                                }else{
+
+                                }
+
                                 initLocation();
                             }
                         });
@@ -422,8 +433,9 @@ public class MainActivity extends AppCompatActivity {
                 public void run() {
                     recordAdapter.setLocation(location);
                     collectionAdapter.setLocation(location);
-                    collectionAdapter.notifyDataSetChanged();
                     recordAdapter.notifyDataSetChanged();
+                    collectionAdapter.notifyDataSetChanged();
+
 
                 }
             });
