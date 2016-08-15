@@ -154,4 +154,9 @@ public class MainAdapter extends BaseAdapter {
                 * Math.cos(lat2) * sb2 * sb2));
         return d;
     }
+
+    @Override
+    public boolean areAllItemsEnabled() {
+        return super.areAllItemsEnabled();
+    }
 }

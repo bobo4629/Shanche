@@ -46,6 +46,8 @@
             android:name="PGYER_APPID"
             android:value="790c6cac2cf2ed9d678cd75b18fd5d65" >
         </meta-data>
+        <meta-data android:name="TD_APP_ID" android:value="AE41A509E5E28A3312D6794C567F16E0" />
+        <meta-data android:name="TD_CHANNEL_ID" android:value="same" />
     </application>
 
 </manifest>

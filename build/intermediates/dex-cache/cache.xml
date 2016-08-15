@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\libs\TalkingdataAnalytics.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="55270e73dfefe33430d2f5447b2f745bb4e8cb11">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\TalkingdataAnalytics_1c08a06661adf8231a91171ed0e146b63ca1e1fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.github.AndroidDeveloperLB\MaterialPreferenceLibrary\9\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -66,21 +75,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="false"
-        revision="24.0.1"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_c3c644f60ba998918c15a49ff50ad15368c35997.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="24.0.1"
         sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
         <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-23.4.0_5cb8491b9bcd3391229288d27aebd3701303f8d7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="false"
+        revision="24.0.1"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.4.0_c3c644f60ba998918c15a49ff50ad15368c35997.jar" />
     </item>
     <item
         is-multidex="false"
@@ -93,6 +102,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_e432c0e253922c93b67cbbfaa7bc59c4632e98a3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
         jumboMode="false"
         optimize="false"
@@ -102,12 +120,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jar="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\libs\TalkingdataAnalytics.jar"
         jumboMode="false"
-        optimize="true"
+        optimize="false"
         revision="24.0.1"
-        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-23.4.0_e432c0e253922c93b67cbbfaa7bc59c4632e98a3.jar" />
+        sha1="55270e73dfefe33430d2f5447b2f745bb4e8cb11">
+        <dex dex="C:\Users\bobo1\AndroidStudioProjects\Shanche\app\build\intermediates\pre-dexed\debug\TalkingdataAnalytics_1c08a06661adf8231a91171ed0e146b63ca1e1fa.jar" />
     </item>
     <item
         is-multidex="false"

@@ -49,6 +49,7 @@ import bobo.shanche.jsonDo.Station;
 import bobo.shanche.myAdapter.MainAdapter;
 
 import com.pgyersdk.crash.PgyCrashManager;
+import com.tendcloud.tenddata.TCAgent;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
     private CoordinatorLayout mainView;
     private MainAdapter recordAdapter;
     private MainAdapter collectionAdapter;
+    private ListView listView_Collection;
+    private ListView listView_Record;
     final static private String DbTable_C = "collection";
     final static private String DbTable_R = "record";
     private List<MainBus> collectionList = new ArrayList<>();
@@ -79,11 +82,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        TCAgent.LOG_ON=true;
+        // App ID: 在TalkingData创建应用后，进入数据报表页中，在“系统设置”-“编辑应用”页面里查看App ID。
+        // 渠道 ID: 是渠道标识符，可通过不同渠道单独追踪数据。
+        TCAgent.init(this, "AE41A509E5E28A3312D6794C567F16E0", "same");
+        TCAgent.setReportUncaughtExceptions(true);
+
         PgyCrashManager.register(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mainView = (CoordinatorLayout) findViewById(R.id.MainView);
+
+
         //配置tabLayout
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
         mTabLayout = (TabLayout) findViewById(R.id.tabLaout);
@@ -154,9 +165,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initCollection(final int newOrRefresh) {
+
         if (!isNetworkConnected()) {
             Snackbar.make(mainView, "暂无网络连接，请稍后再试", Snackbar.LENGTH_LONG).show();
         } else {
+
+            try{
+                listView_Collection.setEnabled(false);
+            }catch (Exception e){
+
+            }
+
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -164,7 +183,6 @@ public class MainActivity extends AppCompatActivity {
                     DbHelper db = new DbHelper(MainActivity.this);
                     Cursor cursor = db.search(DbTable_C, null);
                     collectionList.clear();
-
                     if (cursor.moveToFirst()) {
                         do {
                             String id = cursor.getString(1);
@@ -208,8 +226,8 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final ListView listView_Collection = (ListView) findViewById(R.id.listView_Collection);
                                 if(newOrRefresh==1){
+                                    listView_Collection = (ListView) findViewById(R.id.listView_Collection);
                                     collectionAdapter = new MainAdapter(MainActivity.this, collectionList);
                                     listView_Collection.setAdapter(collectionAdapter);
                                     listView_Collection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -221,6 +239,7 @@ public class MainActivity extends AppCompatActivity {
                                             intent.putExtra("id", mainBus.getBusID());
                                             intent.putExtra("lineName", mainBus.getLineName());
                                             startActivity(intent);
+                                            listView_Collection.setEnabled(true);
                                         }
                                     });
                                 }else {
@@ -241,6 +260,13 @@ public class MainActivity extends AppCompatActivity {
         if (!isNetworkConnected()) {
             Snackbar.make(mainView, "暂无网络连接，请稍后再试", Snackbar.LENGTH_LONG).show();
         } else {
+
+            try{
+                listView_Record.setEnabled(false);
+            }catch (Exception e){
+
+            }
+
             new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -294,9 +320,8 @@ public class MainActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                final ListView listView_Record = (ListView) findViewById(R.id.listView_Record);
                                 if(newOrRefresh==1){
-
+                                    listView_Record = (ListView) findViewById(R.id.listView_Record);
                                     recordAdapter = new MainAdapter(MainActivity.this, recordList);
                                     listView_Record.setAdapter(recordAdapter);
                                     listView_Record.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -308,6 +333,7 @@ public class MainActivity extends AppCompatActivity {
                                             intent.putExtra("lineName", mainBus.getLineName());
                                             intent.putExtra("upDown", mainBus.getUpDown());
                                             startActivity(intent);
+                                            listView_Record.setEnabled(true);
                                         }
                                     });
 
@@ -354,6 +380,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Snackbar.make(mainView, "无定位权限，无法查看最近车辆。", Snackbar.LENGTH_LONG).show();
+                            recordAdapter.notifyDataSetChanged();
+                            listView_Record.setEnabled(true);
+                            collectionAdapter.notifyDataSetChanged();
+                            listView_Collection.setEnabled(true);
                         }
                     });
                     return;
@@ -372,6 +402,10 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             Snackbar.make(mainView, "无可用定位服务，请检查是否打开定位服务。", Snackbar.LENGTH_LONG).show();
+                            recordAdapter.notifyDataSetChanged();
+                            listView_Record.setEnabled(true);
+                            collectionAdapter.notifyDataSetChanged();
+                            listView_Collection.setEnabled(true);
                         }
                     });
                     return;
@@ -423,6 +457,10 @@ public class MainActivity extends AppCompatActivity {
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+            recordAdapter.notifyDataSetChanged();
+            listView_Record.setEnabled(true);
+            collectionAdapter.notifyDataSetChanged();
+            listView_Collection.setEnabled(true);
             return;
         }
         try{
@@ -434,9 +472,9 @@ public class MainActivity extends AppCompatActivity {
                     recordAdapter.setLocation(location);
                     collectionAdapter.setLocation(location);
                     recordAdapter.notifyDataSetChanged();
+                    listView_Record.setEnabled(true);
                     collectionAdapter.notifyDataSetChanged();
-
-
+                    listView_Collection.setEnabled(true);
                 }
             });
         }catch (Exception e){

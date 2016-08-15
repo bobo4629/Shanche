@@ -264,7 +264,7 @@ public class DetialActivity extends AppCompatActivity {
                                         public void onClick(View view, int position) {
                                             Intent intent = new Intent(DetialActivity.this,RemindActivity.class);
                                             intent.putExtra("id",busSites.get(position).getLineId());
-                                            intent.putExtra("upDown",upOrDown);
+                                            intent.putExtra("upDown",upDown);
                                             intent.putExtra("siteNow",busSites.get(position).getSiteName());
                                             intent.putExtra("position",position);
                                             startActivity(intent);

@@ -108,7 +108,7 @@ public class RemindActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         id=intent.getStringExtra("id");
-        upDown = intent.getIntExtra("upDown",UP);
+        upDown = intent.getIntExtra("upDown",1);
         siteNow = intent.getStringExtra("siteNow");
         position = intent.getIntExtra("position",0);
 
