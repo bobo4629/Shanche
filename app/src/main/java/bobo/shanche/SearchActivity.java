@@ -27,7 +27,10 @@ import java.util.Map;
 
 import bobo.shanche.Dosth.DoNet;
 import bobo.shanche.jsonDo.BusLine;
+import bobo.shanche.jsonDo.BusSite;
+import bobo.shanche.jsonDo.SiteLine;
 import bobo.shanche.myAdapter.BusLineAdapter;
+import bobo.shanche.myAdapter.SiteAdapter;
 
 import com.pgyersdk.crash.PgyCrashManager;
 /**
@@ -38,11 +41,9 @@ public class SearchActivity extends AppCompatActivity {
     private String busLineName;
     private String postBack;
 
-    private List<String> id = new ArrayList<String>();
-    private List<String> lineName= new ArrayList<String>();
-    private List<String> downStartTime= new ArrayList<String>();
-    private List<String> downEndTime= new ArrayList<String>();
-    private List<BusLine> lists;
+
+    private List<BusLine> lists_BusLine;
+    private List<SiteLine> lists_BusSite;
 
     @Override
     public void onBackPressed() {
@@ -84,8 +85,10 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+
                 busLineName = editText.getText().toString();
                 if(busLineName.isEmpty()==false){
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
@@ -100,28 +103,52 @@ public class SearchActivity extends AppCompatActivity {
                                     });
                                 }else {
                                     Map<String,String> content = new HashMap<>();
-                                    content.put("lineName",busLineName);
-                                    postBack = doPost.post("http://183.232.33.171/IntelligentBusService.asmx/GetLines", content);
-                                    doJson(postBack);
-                                    runOnUiThread(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            BusLineAdapter adapter = new BusLineAdapter(SearchActivity.this,lists);
-                                            listView.setAdapter(adapter);
-                                            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                                @Override
-                                                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                                    BusLine line = lists.get(position);
-                                                    Intent intent =new Intent(SearchActivity.this,DetialActivity.class);
-                                                    intent.putExtra("id",line.getId());
-                                                    intent.putExtra("lineName",line.getLineName());
-                                                    intent.putExtra("startTime",line.getDownStartTime());
-                                                    intent.putExtra("endTime",line.getDownEndTime());
-                                                    startActivity(intent);
-                                                }
-                                            });
-                                        }
-                                    });
+                                    if(Character.isDigit(busLineName.charAt(0))){
+                                        content.put("lineName",busLineName);
+                                        postBack = doPost.post("http://183.232.33.171/IntelligentBusService.asmx/GetLines", content);
+                                        doJson(postBack);
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                BusLineAdapter adapter = new BusLineAdapter(SearchActivity.this,lists_BusLine);
+                                                listView.setAdapter(adapter);
+                                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                    @Override
+                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                        BusLine line = lists_BusLine.get(position);
+                                                        Intent intent =new Intent(SearchActivity.this,DetialActivity.class);
+                                                        intent.putExtra("id",line.getId());
+                                                        intent.putExtra("lineName",line.getLineName());
+                                                        intent.putExtra("startTime",line.getDownStartTime());
+                                                        intent.putExtra("endTime",line.getDownEndTime());
+                                                        startActivity(intent);
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    }else{
+                                        content.put("siteName",busLineName);
+                                        postBack = doPost.post("http://183.232.33.171/IntelligentBusService.asmx/GetSites?op=GetSites ", content);
+                                        doJson_Site(postBack);
+                                        runOnUiThread(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                SiteAdapter adapter = new SiteAdapter(SearchActivity.this,lists_BusSite);
+                                                listView.setAdapter(adapter);
+                                                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                                    @Override
+                                                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                                                        SiteLine site = lists_BusSite.get(position);
+                                                        Intent intent =new Intent(SearchActivity.this,SiteActivity.class);
+                                                        intent.putExtra("siteId",site.getId());
+                                                        intent.putExtra("siteName",site.getSiteName());
+                                                        startActivity(intent);
+                                                    }
+                                                });
+                                            }
+                                        });
+                                    }
+
                                 }
                             }catch (Exception e){
                                 e.printStackTrace();
@@ -142,14 +169,10 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void doJson(String json) {
-        lists = new Gson().fromJson(json, new TypeToken<List<BusLine>>() {}.getType());
-        for (int i=0;i<lists.size();i++)
-        {
-            lineName.add(lists.get(i).getLineName());
-            id.add(lists.get(i).getId());
-            downEndTime.add(lists.get(i).getDownEndTime());
-            downStartTime.add(lists.get(i).getDownStartTime());
-        }
+        lists_BusLine = new Gson().fromJson(json, new TypeToken<List<BusLine>>() {}.getType());
+    }
+    private void doJson_Site(String json){
+        lists_BusSite = new Gson().fromJson(json, new TypeToken<List<SiteLine>>() {}.getType());
     }
     public boolean isNetworkConnected() {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

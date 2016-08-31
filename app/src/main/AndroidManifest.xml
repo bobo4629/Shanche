@@ -39,6 +39,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".RemindActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SiteActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
 
 

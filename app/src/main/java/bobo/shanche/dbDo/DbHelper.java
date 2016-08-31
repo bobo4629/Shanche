@@ -87,5 +87,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void deleteUpDown(String tableName,String lineName,int upDown){
         this.getWritableDatabase().delete(tableName,"lineName=? and upDown=?",new String[]{lineName,Integer.toString(upDown)});
     }
-
+    public void deleteRecord(){
+        this.getWritableDatabase().delete("record",null,null);
+    }
 }

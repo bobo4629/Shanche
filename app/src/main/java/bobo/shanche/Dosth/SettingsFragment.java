@@ -16,7 +16,7 @@ import com.pgyersdk.update.PgyUpdateManager;
 
 
 import bobo.shanche.R;
-import bobo.shanche.coffeeDialog;
+import bobo.shanche.dbDo.DbHelper;
 
 /**
  * Created by bobo1 on 2016/7/16.
@@ -42,8 +42,10 @@ public class SettingsFragment extends PreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         switch (preference.getKey()){
             case "coffee":
-                coffeeDialog coffeeDialog = new coffeeDialog();
-                coffeeDialog.show(getFragmentManager(),"coffee");
+                Intent intent_Donate = new Intent("android.intent.action.VIEW");
+                Uri uri_Donate = Uri.parse("https://qr.alipay.com/apw3qbhhg48js8cz61");
+                intent_Donate.setData(uri_Donate);
+                startActivity(intent_Donate);
                 break;
             case "github":
                 Intent intent_Github = new Intent("android.intent.action.VIEW");
@@ -68,6 +70,11 @@ public class SettingsFragment extends PreferenceFragment {
                 break;
             case "shanche":
                 PgyUpdateManager.register(getActivity());
+                break;
+            case "clean":
+                DbHelper db = new DbHelper(getActivity());
+                db.deleteRecord();
+                db.close();
                 break;
             case "note":
                 break;

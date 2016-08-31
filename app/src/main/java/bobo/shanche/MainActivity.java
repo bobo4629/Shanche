@@ -42,10 +42,10 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import bobo.shanche.Dosth.DoNet;
-import bobo.shanche.Dosth.MainBus;
 import bobo.shanche.dbDo.DbHelper;
 import bobo.shanche.jsonDo.BusSite;
 import bobo.shanche.jsonDo.Station;
+import bobo.shanche.myAdapter.HomeAdapter;
 import bobo.shanche.myAdapter.MainAdapter;
 
 import com.pgyersdk.crash.PgyCrashManager;
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView_Record;
     final static private String DbTable_C = "collection";
     final static private String DbTable_R = "record";
-    private List<MainBus> collectionList = new ArrayList<>();
-    private List<MainBus> recordList = new ArrayList<>();
+    private List<HomeAdapter.MainBus> collectionList = new ArrayList<>();
+    private List<HomeAdapter.MainBus> recordList = new ArrayList<>();
 
     private Location location;
     private LocationManager locationManager;
@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                             String startSite = cursor.getString(3);
                             String endSite = cursor.getString(4);
                             int upDown = cursor.getInt(5);
-                            MainBus mainBus = new MainBus();
+                            HomeAdapter.MainBus mainBus = new HomeAdapter.MainBus();
                             mainBus.setBusID(id);
                             mainBus.setLineName(lineName);
                             mainBus.setStartSite(startSite);
@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
                                     listView_Collection.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                            MainBus mainBus = (MainBus) listView_Collection.getItemAtPosition(position);
+                                            HomeAdapter.MainBus mainBus = (HomeAdapter.MainBus) listView_Collection.getItemAtPosition(position);
                                             Intent intent = new Intent(MainActivity.this, DetialActivity.class);
                                             intent.putExtra("upDown", mainBus.getUpDown());
                                             intent.putExtra("id", mainBus.getBusID());
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
                             String endSite = cursor.getString(4);
                             int upDown = cursor.getInt(5);
 
-                            MainBus mainBus = new MainBus();
+                            HomeAdapter.MainBus mainBus = new HomeAdapter.MainBus();
                             mainBus.setBusID(id);
                             mainBus.setLineName(lineName);
                             mainBus.setStartSite(startSite);
@@ -327,7 +327,7 @@ public class MainActivity extends AppCompatActivity {
                                     listView_Record.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                         @Override
                                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                            MainBus mainBus = (MainBus) listView_Record.getItemAtPosition(position);
+                                            HomeAdapter.MainBus mainBus = (HomeAdapter.MainBus) listView_Record.getItemAtPosition(position);
                                             Intent intent = new Intent(MainActivity.this, DetialActivity.class);
                                             intent.putExtra("id", mainBus.getBusID());
                                             intent.putExtra("lineName", mainBus.getLineName());

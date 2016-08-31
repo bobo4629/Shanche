@@ -4,12 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import java.util.ArrayList;
 import java.util.List;
 
 import bobo.shanche.R;
@@ -89,5 +87,79 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ListItemViewHo
         }
     }
 
+    /**
+     * Created by bobo1 on 2016/7/13.
+     */
+    public static class MainBus {
+        private String busID;
+        private String lineName;
+        private String startSite;
+        private String endSite;
+        private int upDown;
+        private List<String> isbusList;
+
+        public List<BusSite> getBusSiteList() {
+            return busSiteList;
+        }
+
+        public void setBusSiteList(List<BusSite> busSiteList) {
+            this.busSiteList = busSiteList;
+        }
+
+        private List<BusSite> busSiteList;
+
+        public List<String> getIsbusList() {
+            return isbusList;
+        }
+
+        public void setIsbusList(List<String> isbusList) {
+            this.isbusList = isbusList;
+        }
+
+
+
+
+        public int getUpDown() {
+            return upDown;
+        }
+
+        public void setUpDown(int upDown) {
+            this.upDown = upDown;
+        }
+
+        public String getBusID() {
+            return busID;
+        }
+
+        public void setBusID(String busID) {
+            this.busID = busID;
+        }
+
+        public String getLineName() {
+            return lineName;
+        }
+
+        public void setLineName(String lineName) {
+            this.lineName = lineName;
+        }
+
+        public String getStartSite() {
+            return startSite;
+        }
+
+        public void setStartSite(String startSite) {
+            this.startSite = startSite;
+        }
+
+        public String getEndSite() {
+            return endSite;
+        }
+
+        public void setEndSite(String endSite) {
+            this.endSite = endSite;
+        }
+
+
+    }
 }
 

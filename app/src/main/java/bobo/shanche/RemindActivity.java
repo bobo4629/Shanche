@@ -179,10 +179,20 @@ public class RemindActivity extends AppCompatActivity {
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                if(position - nestestBusPosition<=2)
+                                int vTime=200 ;
+                                boolean isCar =false;
+                                if(position - nestestBusPosition<=1){
+                                    vTime=200;
+                                    isCar=true;
+                                }else if(position == nestestBusPosition) {
+                                    vTime = 500;
+                                    isCar=true;
+                                }
+
+                                if(isCar)
                                     switch (remindWay){
                                         case 0:
-                                            vibrator.vibrate(500);
+                                            vibrator.vibrate(vTime);
                                             break;
                                         case 1:
                                             try {
@@ -194,7 +204,7 @@ public class RemindActivity extends AppCompatActivity {
                                             }
                                             break;
                                         case 2:
-                                            vibrator.vibrate(500);
+                                            vibrator.vibrate(vTime);
                                             try {
                                                 Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
                                                 Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);

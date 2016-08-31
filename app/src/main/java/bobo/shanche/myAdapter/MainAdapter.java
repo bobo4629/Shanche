@@ -1,9 +1,7 @@
 package bobo.shanche.myAdapter;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.location.Location;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,6 @@ import com.thinkcool.circletextimageview.CircleTextImageView;
 
 import java.util.List;
 
-import bobo.shanche.Dosth.MainBus;
 import bobo.shanche.R;
 import bobo.shanche.jsonDo.BusSite;
 
@@ -22,7 +19,7 @@ import bobo.shanche.jsonDo.BusSite;
  * Created by bobo1 on 2016/7/13.
  */
 public class MainAdapter extends BaseAdapter {
-    private List<MainBus> list;
+    private List<HomeAdapter.MainBus> list;
     private LayoutInflater layoutInflater;
 
     public void setLocation(Location location) {
@@ -31,15 +28,11 @@ public class MainAdapter extends BaseAdapter {
 
     private Location location;
     private double distance_Earth =6378137;
-
-
-
     private String carString;
 
-    public MainAdapter(Context context, List<MainBus> mainBusList) {
+    public MainAdapter(Context context, List<HomeAdapter.MainBus> mainBusList) {
         this.list = mainBusList;
         this.layoutInflater =layoutInflater.from(context);
-
     }
 
     @Override
@@ -103,7 +96,7 @@ public class MainAdapter extends BaseAdapter {
                 color=R.color.i;
                 break;
         }
-        MainBus mainBus=list.get(position);
+        HomeAdapter.MainBus mainBus=list.get(position);
         circleTextImageView.setText(mainBus.getLineName());
         circleTextImageView.setFillColorResource(color);
 

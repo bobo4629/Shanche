@@ -68,7 +68,7 @@ public class DetialActivity extends AppCompatActivity {
     final static private String DbTable_S = "settings";
 
     //自动刷新相关
-    private long delayTime=-1;
+    private long delayTime=5201314;
     Handler handler = new Handler();
     Runnable runnable=new Runnable() {
         @Override
@@ -252,7 +252,7 @@ public class DetialActivity extends AppCompatActivity {
                             @Override
                             public void run() {
                                 textView_StartSite.setText(busSites.get(0).getSiteName());
-                                textView_EndSite.setText(busSites.get(busSites.size() - 1).getSiteName());
+                                textView_EndSite.setText(busSites.get(busSites.size()-1).getSiteName());
                                 //RecyclerView的配置
                                 if(DetialActivity.this.neworrefresh==1){
                                     RecyclerView mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerView);
