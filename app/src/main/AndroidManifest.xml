@@ -2,54 +2,57 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="bobo.shanche">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/icon"
+        android:name=".base.BaseApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SearchActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <action android:name="android.intent.action.MAIN" />
-        </activity>
-        <activity
-            android:name=".DetialActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SettingsActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <activity android:name=".RemindActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SiteActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".activity.GuideActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.SearchActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.DetailSiteActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.DetailLineActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.SettingActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.CollectionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
 
 
-        <meta-data
-            android:name="PGYER_APPID"
-            android:value="790c6cac2cf2ed9d678cd75b18fd5d65" >
-        </meta-data>
         <meta-data android:name="TD_APP_ID" android:value="AE41A509E5E28A3312D6794C567F16E0" />
-        <meta-data android:name="TD_CHANNEL_ID" android:value="same" />
+
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="43a791ddc5e54a1a764853e33ecdafed">
+        </meta-data>
+
     </application>
+
 
 </manifest>

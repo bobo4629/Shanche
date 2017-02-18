@@ -3,21 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_settings"
+    android:layout_height="match_parent">
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:fitsSystemWindows="true"
-        app:popupTheme="@style/AppTheme.PopupOverlay"
-        app:elevation="4dp"
-        />
+        android:layout_height="wrap_content"
+        app:theme="@style/AppTheme.AppBarOverlay">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/Toolbar_settings"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"/>
+    </android.support.design.widget.AppBarLayout>
 
-    <fragment
-        android:id="@+id/fragment1"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/fragment_settings_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="bobo.shanche.Dosth.SettingsFragment" />
+        android:layout_height="match_parent"/>
 </LinearLayout>

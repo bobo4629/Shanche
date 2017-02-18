@@ -1,95 +1,119 @@
-<resources>
-    <string name="app_name">汕车</string>
-    <string name="action_settings">设置</string>
-    <string name="title_activity_settings">Settings</string>
-    <string-array name="settings">
+<resources xmlns:xliff="http://schemas.android.com/tools">
+    <string name="app_name">汕头公交</string>
+    <string name="app_version">8.0</string>
+    <integer name="app_versioncode">8</integer>
+
+    <string name="navigation_drawer_open">侧滑导航栏打开了</string>
+    <string name="navigation_drawer_close">侧滑导航栏关闭了</string>
+
+    <string name="noNet">暂无网络连接，请稍后再试。</string>
+    <string name="mistake">出了点小错，反复如此请反馈。</string>
+
+    <string name="drawer_group_name">设置</string>
+    <string name="drawer_item_guide">路线</string>
+    <string name="drawer_item_star">收藏</string>
+    <string name="drawer_item_settings">设置</string>
+    <string name="drawer_item_feedback">反馈</string>
+    <string name="feedback_mistake">未安装QQ或版本不支持</string>
+
+    <string name="drawer_header_weather_hint">天气获取中…</string>
+    <string name="drawer_header_weather_temperature"><xliff:g>%s</xliff:g>°</string>
+    <string name="drawer_header_weather_wind"><xliff:g>%s</xliff:g>风 <xliff:g>%s</xliff:g>级</string>
+    <string name="drawer_header_weather_humidity">湿度 <xliff:g>%s</xliff:g>%%</string>
+
+    <string name="main_nearby_stop_header">周边车站</string>
+    <string name="main_button_collection">我的收藏</string>
+    <string name="main_button_home">一键回家</string>
+    <string name="main_button_work">一键上班</string>
+    <string name="item_busstop_description">车站图标</string>
+    <string name="item_busstop_distance"><xliff:g>%d</xliff:g>米</string>
+    <string name="main_searching">_(:з」∠)_周边车站获取中…</string>
+    <string name="main_empty">_(:з」∠)_周边无车站</string>
+
+
+    <string name="search_collection">我的收藏</string>
+    <string name="search_selFromMap">地图选点</string>
+    <string name="search_textView_hint">搜索路线、站点以及地点…</string>
+    <string name="search_header">公交搜索结果</string>
+    <string name="search_poi_header">地点搜索结果</string>
+    <string name="search_empty">_(:з」∠)_搜索不到相关公交站点、线路</string>
+    <string name="search_empty_poi">_(:з」∠)_搜索不到相关地点</string>
+    <string name="search_whenNoinput">请输入搜索内容</string>
+    <string name="seearch_loadmore">点击查看更多</string>
+
+
+    <string name="item_history_description">历史记录图标</string>
+    <string name="item_search_line_description">列表线路图标</string>
+    <string name="item_search_site_description">列表站点图标</string>
+
+    <string name="guide_title">路线</string>
+    <string name="guide_tv_local_hint">我的位置</string>
+    <string name="guide_tv_aim_hint">广东汕头华侨中学</string>
+
+    <string name="detail_start_time">首：</string>
+    <string name="detail_end_time">末：</string>
+    <string name="detail_fare">票价：</string>
+    <string name="detail_fare_right"> 元</string>
+    <string name="detail_start_site">始：</string>
+    <string name="detail_end_site">终：</string>
+
+    <string name="fav_done">收藏成功</string>
+    <string name="fav_remove">删除收藏成功</string>
+
+    <string name="fab_no_fav">收藏</string>
+    <string name="fab_fav">已收藏</string>
+    <string name="fab_updown_change">换向</string>
+    <string name="fab_refresh">刷新</string>
+
+
+    <string name="collection_empty">_(:з」∠)_这里空空如也</string>
+
+    <string name="pre_category_settings">常规</string>
+    <string name="pre_key_way_vibrate">vibrate</string>
+    <string name="pre_title_way_vibrate">提醒时震动</string>
+    <string name="pre_key_way_ringtone">ringtone</string>
+    <string name="pre_title_way_ringtone">提醒时响铃</string>
+    <string name="pre_title_refresh_time">自动刷新间隔</string>
+    <string name="pre_key_refresh_time">refresh</string>
+    <string-array name="pre_item_title_refresh_time">
+        <item>永不</item>
         <item>5秒</item>
-        <item>10秒</item>
-        <item>20秒</item>
+        <item>15秒</item>
         <item>30秒</item>
-        <item>关闭</item>
     </string-array>
-
-    <string-array  name="settings_value">
+    <string-array name="pre_item_value_refresh_time">
+        <item>520321314</item>
         <item>5000</item>
-        <item>10000</item>
-        <item>20000</item>
+        <item>15000</item>
         <item>30000</item>
-        <item>5201314</item>
     </string-array>
 
-    <string-array name="remindWay">
-        <item>震动</item>
-        <item>声音</item>
-        <item>Both</item>
-    </string-array>
-    <string-array name="remindWay_value">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
+    <string name="pre_category_about">关于</string>
+    <string name="pre_about_appname">汕头公交 - 汕头公交第三方客户端</string>
+    <string name="pre_about_title_update">启动时检查更新</string>
+    <string name="pre_about_key_update">update</string>
+    <string name="pre_about_github">软件开源地址：</string>
+    <string name="pre_about_github_summary">https://github.com/bobo4629/Shanche</string>
+    <string name="pre_about_title_donate">捐赠</string>
+    <string name="pre_about_key_donate">donate</string>
 
-    <!-- Strings related to Settings -->
+    <string name="db_file_name">stBus.db</string>
+    <string name="db_table_line">COLLECTIONLINE</string>
+    <string name="db_table_site">COLLECTIONSITE</string>
 
-    <!-- Example General settings -->
-    <string name="pref_header_general">General</string>
-
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
-    <string-array name="pref_example_list_titles">
-        <item>Always</item>
-        <item>When possible</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_example_list_values">
-        <item>1</item>
-        <item>0</item>
-        <item>-1</item>
-    </string-array>
-
-
-
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_notifications">Notifications</string>
-
-    <string name="pref_title_new_message_notifications">New message notifications</string>
-
-    <string name="pref_title_ringtone">Ringtone</string>
-    <string name="pref_ringtone_silent">Silent</string>
-
-    <string name="pref_title_vibrate">Vibrate</string>
-
-
+    <!-- 搜索周边站点 -->
+    <string name="url_getNearByStop">http://183.232.33.171/BusService.asmx/GetDistance</string>
+    <!-- 搜索线路 -->
+    <string name="url_getLines">http://183.232.33.171/BusService.asmx/GetLines</string>
+    <!-- 搜索站点 -->
+    <string name="url_getSites">http://183.232.33.171/BusService.asmx/GetSites</string>
+    <!-- 该线路的具体 -->
+    <string name="url_getLineDetail">http://183.232.33.171/BusService.asmx/GetStationLicense</string>
+    <!-- 该站点的具体 -->
+    <string name="url_getSiteDetail">http://183.232.33.171/BusService.asmx/GetSiteLinesExtend</string>
+    <!-- 获得线路公告 -->
+    <string name="url_getLineNotice">http://183.232.33.171/BusService.asmx/GetLineNotice</string>
+    <!-- 获得线路的信息 -->
+    <string name="url_getLineById">http://183.232.33.171/BusService.asmx/GetLineById</string>
 
 </resources>
